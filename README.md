@@ -1,18 +1,4 @@
-# Create AWS VPC
-
-Features:
-
-* Creates (optional) peering connection(s).
-* Supports tagging for ALL resources.
-
-
-This role will create a new AWS VPC including:
-
-* Peering Connection(s)
-* Internet Gateway
-* NAT Gateway(s)
-* Route Table(s)
-* Subnet(s)
+# Append rule to security group
 
 ## Requirements
 
