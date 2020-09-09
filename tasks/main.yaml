@@ -1,0 +1,20 @@
+- name: "Get public ip/nat ip address"
+  uri:
+    url: "https://api.ipify.org"
+    return_content: "yes"
+  register: ipify
+
+- name: "Add public ip to security group"
+  ec2_group:
+    profile: "{{ aws_ec2_security_group_append.profile }}"
+    name: "{{ aws_ec2_security_group_append.name }}"
+    description: "{{ aws_ec2_security_group_append.description }}"
+    vpc_id: "{{ aws_ec2_security_group_append.vpc_id }}"
+    purge_rules: "no"
+    rules:
+      - proto: "tcp"
+        ports: "{{ aws_ec2_security_group_append.ports }}"
+        cidr_ip: "{{ ipify.content }}/32"
+        rule_desc: "{{ aws_ec2_security_group_append.rule_desc }}"
+  delegate_to: "localhost"
+  ignore_errors: true

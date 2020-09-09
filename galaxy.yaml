@@ -1,0 +1,13 @@
+namespace: "mateothegreat"
+name: "aws_ec2_security_group_append"
+version: "0.0.1"
+readme: "README.md"
+authors:
+  - "Matthew Davis (https://matthewdavis.io)"
+description: "Append a rule to an existing security group."
+license: ["MIT"]
+license_file: "COPYING"
+tags: ["cloud", "aws", "vpc", "ec2", "security group"]
+repository: "https://github.com/mateothegreat/aws-ec2-security-group-append.git"
+homepage: "https://github.com/mateothegreat/aws-ec2-security-group-append"
+issues: "https://github.com/mateothegreat/aws-ec2-security-group-append/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
